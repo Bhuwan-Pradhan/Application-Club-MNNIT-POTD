@@ -1,3 +1,4 @@
+package jan3;
 /* 
 Decreasing Sequence
 
@@ -50,31 +51,14 @@ Constraints:
 
 */
 
+//link - https://www.geeksforgeeks.org/problems/decreasing-sequence2722/1
 
-import java.util.Scanner;
 
-public class jan3_decreasingSequence {
+class Compute {
 
-    public static void main(String[] args){
-
-        Scanner sc=new Scanner(System.in);
-
+    public long minMoves(long a[], long n, long k) {
        
-
-        System.out.println("Enter the number of elements");
-        int n=sc.nextInt();
-
-        System.out.println("Enter the value of K");
-        long k=sc.nextInt();        
-
-        int[] a=new int[n];
-
-        for(int i=0;i<n;i++){
-            int number=sc.nextInt();
-            a[i]=number;
-        }
-
-         double mod=1e9+7;
+       double mod=1e9+7;
        
        long count=0;
        long oper=0;
@@ -90,10 +74,12 @@ public class jan3_decreasingSequence {
                }
                
                count+=oper;
-               a[(int)i+1]=a[(int)i+1]-(int)(oper*k);
+               a[(int)i+1]=a[(int)i+1]-(oper*k);
            }
        }
-       System.out.println((long)(count%mod));
+       return (long)(count%mod);
+    }
+}
 
         //Time Complexity: O(n)
          
@@ -107,5 +93,3 @@ public class jan3_decreasingSequence {
          * if quotient is 0 then oper is quotient else oper is quotient+1
          * at last add oper in count and change the value of a[i+1]=a[i+1]-(oper*k)
          */
-    }
-}

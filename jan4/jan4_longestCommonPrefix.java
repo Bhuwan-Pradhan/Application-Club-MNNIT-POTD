@@ -1,3 +1,4 @@
+package jan4;
 /* 
 14. Longest Common Prefix
 

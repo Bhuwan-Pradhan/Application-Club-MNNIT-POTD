@@ -1,3 +1,4 @@
+package jan2;
 /* 
 Union of two arrays
 
@@ -43,6 +44,8 @@ Expected Auxilliary Space : O(n+m)
 
 */
 
+//link- https://www.geeksforgeeks.org/problems/union-of-two-arrays3538/1
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
@@ -84,7 +87,7 @@ public class jan2_unionOfTwoArray {
         System.out.println(set);
         System.out.println("number of element in union: "+set.size());
 
-
+        
 
 
 

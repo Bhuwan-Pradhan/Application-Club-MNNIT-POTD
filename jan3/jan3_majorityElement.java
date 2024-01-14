@@ -1,3 +1,4 @@
+package jan3;
 /* 
 169. Majority Element
 
@@ -26,30 +27,16 @@ n == nums.length
 */
 
 
+//link - https://leetcode.com/problems/majority-element/
+
 import java.util.HashMap;
-import java.util.Scanner;
 
-public class jan3_majorityElement {
 
-    public static void main(String[] args){
 
-        Scanner sc=new Scanner(System.in);
-
-       
-
-        System.out.println("Enter the number of elements");
-        int n=sc.nextInt();
-      
-
-        int[] nums=new int[n];
-
-        for(int i=0;i<n;i++){
-            int number=sc.nextInt();
-            nums[i]=number;
-        }
-
-         
-
+class Solution {
+    public int majorityElement(int[] nums) {
+        
+        int n=nums.length;
         int condition=n/2;
 
         HashMap<Integer, Integer> hm=new HashMap<>();
@@ -62,9 +49,13 @@ public class jan3_majorityElement {
         for(int i=0;i<n;i++){
             int value=hm.get(nums[i]);
             if(value>condition)
-            System.out.println(nums[i]);
+            return nums[i];
  
         }        
+
+        return -1;
+    }
+}  
 
         
 
@@ -78,5 +69,3 @@ public class jan3_majorityElement {
          * first we take hashMap and a condition
          * then check value of all key which is more than condition
          */
-    }
-}

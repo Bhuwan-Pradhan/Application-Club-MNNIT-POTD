@@ -1,3 +1,4 @@
+package jan2;
 /* 
 1512. Number of Good Pairs
 
@@ -30,43 +31,27 @@ Constraints:
 
 */
 
-import java.util.ArrayList;
+//link - https://leetcode.com/problems/number-of-good-pairs/
+
 import java.util.HashMap;
-import java.util.Scanner;
 
-public class jan2_numberOfGoodPair {
-
-    public static void main(String[] args){
-        Scanner sc=new Scanner(System.in);
-
-        ArrayList<Integer> nums=new ArrayList<>();
-
-        System.out.println("Enter the number of elements");
-        int n=sc.nextInt();
-
-
-
-        
-
-        for(int i=0;i<n;i++){
-            int number=sc.nextInt();
-            nums.add(number);
-        }
-
-        HashMap<Integer, Integer> hm=new HashMap<>();
+class Solution {
+    public int numIdenticalPairs(int[] nums) {
         int count=0;
+        HashMap<Integer, Integer> hm=new HashMap<>();
 
-        for(int i=0;i<n;i++){
-            int value=hm.getOrDefault(nums.get(i),0);
-            count += value;
-            hm.put(nums.get(i),value+1);
+        for(int i=0;i<nums.length;i++){
+            int value=hm.getOrDefault(nums[i],0);
+            count+=value;
+            hm.put(nums[i],value+1);
         }
-
-        System.out.println(count);
+        return count;
+    }
+}
 
 
         //Time complexity : O(n)
-        //becuase array or list already given in question we don't count the space of nums so
+        
         //space complexity : O(n)  for HashMap
 
         //Approach
@@ -76,5 +61,3 @@ public class jan2_numberOfGoodPair {
             *add the value to count
             *increase the value of key element
          */
-    }
-}
